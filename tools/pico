@@ -1,6 +1,7 @@
 #!/bin/python3
-
+# just messing around, you can use python -c for this
 import click
+from io import StringIO
 
 @click.command()
 @click.option('--verbose', '-v', is_flag=True, help="Print more output.")
@@ -9,7 +10,13 @@ def run_command(c, verbose):
     if verbose:
         print(f"!pico verbose!")
         print(f"Running command `{c}`")
-    exec(c)
+    #with StringIO(c) as f:
+    #    for line in f.readlines():
+    #        print(line)
+    c = c.split(r"\n")
+    print(c)
+    #print(c)
+    #exec(c)
 
 
 if __name__ == "__main__":
