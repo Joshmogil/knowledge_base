@@ -4,7 +4,7 @@ import click
 
 @click.command()
 @click.option('--verbose', '-v', is_flag=True, help="Print more output.")
-@click.option("-c", default="print('No command supplied to pico)", help="Command to supply")
+@click.option("-c", default="print('No command supplied to pico')", help="Command to supply")
 def run_command(c, verbose):
     if verbose:
         print(f"!pico verbose!")
