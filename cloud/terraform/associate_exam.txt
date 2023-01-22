@@ -1,0 +1,120 @@
+What is Iac?
+
+Infrastructre as code. Code that can be used to provision infrastructure through provider apis
+
+Advantages of IaC?
+
+makes it easy to provision and apply infrastructur econfigurations programmatically
+makes changes idempotent, consistent, repeatable, and predictable
+
+
+-> a provider is an interface terraform uses to interact with a specific target api.
+providers enable terraform to work with virtually any platform or service with an accessible api
+terraform purpose: iac tool that lets you define infrastructure resources in human-readable configuration files that you can version, reuse, and share.
+
+Benefits of multi-cloud and provider agnostic?
+increase fault tolerance by returning to declarative state more quickly.
+becaus terraform interacts with apis through it's provider interfaces, it lets yoou
+use the same workflow for managing multiple providers and handle cross-cloud dependencies.
+
+Benefits of state?
+Saves api calls
+In production, use vcs to manage configuration files, and store state (state files for resources) in a remote backend
+
+
+Terraform provider installation + versioning
+
+plugin based architecture
+
+using multiple providers
+
+how terraform finds and fetches providers
+
+when to use provisioners 
+
+when to use terrafrom fmt to format code
+
+terraform taint to taint resources
+
+terraform import to import existing infrastructure to your terraform state
+
+terraform workspace to create workspaces
+
+terraform state to view terraform state
+
+what does verbose logging do
+
+contrast module source options
+
+interact with module inputs and outputs
+
+describe variable scope within modules/child modules
+
+discover modules from the public terraform module registry
+
+defining module version
+
+describe terraform workflow
+
+consists of 3 stages:
+1. write
+define resources whcih may be across multiple providers and services
+2. plan
+terraform creates an execution plan describing the infrastructure it will create, update, or destroy
+based on the existing infrastructure and your configuration
+3. apply
+On approval, terraform performs the proposed operations in the correct order,
+respecting any resource dependencies
+
+
+initialize a terraform working directory (terraform init)
+
+validate a terraform configuration (terraform validate)
+
+generate and review an execution plan (terraform plan)
+
+execute changes to infrastrucure with terraform (terraform apply)
+
+destroy terraform managed infrastructure (terraform destroy)
+
+describe default local backend
+
+outline state locking
+
+handle backend authentication methods
+
+describe remote state storage mechanisms and supported standard backends
+by default tf stores state locally in a file named terraform.tfstate .
+this works for single developers, but with  terraform in a team, everyone would need to keep their local state files in sync.
+the solution to this is rmeote state. Terraform writes the state data to a remote data store, which can then be shared between all members of a team.
+
+
+
+
+describe effect of terraform refresh on state
+
+describe backend block and cloud integration configuration
+
+understand secret management in state files
+
+demonstrate use of variables and outputs
+
+describe secure secret injection best practices
+
+understand the use of collection and structural types
+
+create and differentiate resource and data configuration
+
+use resource addressing and resource parameters to connect resources together
+
+use terraform built-in functions to write configuration
+
+configure resources using a dynamic block
+
+describe built in dependency management (order of execution based)
+
+describe the benefits of sentinel, regsitry, and workspaces
+
+differentiate OSS and TFE workspaces
+
+summarize features of terraform cloud
